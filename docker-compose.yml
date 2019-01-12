@@ -1,5 +1,23 @@
 version: '3'
 services:
+  database:
+    image: postgres:9.6-alpine
+    environment: 
+      NETWORK_ACCESS=internal
+      POSTGRES_USER=pretix
+      POSTGRES_PASSWORD=
+    volumes:
+      - ./rootfs/postgresql/data:/var/lib/postgresql/data
+    networks:
+      - backend
+
+  redis:
+    image: redis:latest
+    environment: 
+      NETWORK_ACCESS=internal
+    networks:
+      - backend
+
   nginx-proxy:
     image: jwilder/nginx-proxy:alpine
     container_name: nginx-proxy
