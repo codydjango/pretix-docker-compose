@@ -1,22 +1,22 @@
 version: '3'
 services:
   nginx-proxy:
-    image: jwilder/nginx-proxy
+    image: jwilder/nginx-proxy:alpine
     container_name: nginx-proxy
     ports:
-      - "8000:80"
+      - "80:80"
+      - "443:443"
     volumes:
+      - ./proxy/certs:/etc/nginx/certs
       - /var/run/docker.sock:/tmp/docker.sock:ro #unix socket for Docker daemon, required for nginx-proxy.
     networks:
       - backend
-
 
   pythonapp:
     build: .
     environment:
       - VIRTUAL_HOST=pretix.local
       - PYTHONUNBUFFERED=0
-      - ENABLE_ACME=true
     volumes:
       - ./pretix:/app/pretix
     networks:
