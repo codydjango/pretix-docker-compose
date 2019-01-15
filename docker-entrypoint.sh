@@ -5,13 +5,11 @@ if [[ -z "${ROOTDIR}" ]]; then
   exit 1
 fi
 
-cd pretix
-docker build -t pretix .
+docker build -t pretix ./pretix
 
 docker run --rm \
 	-p "8000:80" \
-	-v $(ROOTDIR)/data:/data \
-	-v $(ROOTDIR)/conf:/etc/pretix \
-	-v $(ROOTDIR)/src:/pretix/src \
+	-v ${ROOTDIR}/data:/data \
+	-v ${ROOTDIR}/conf:/etc/pretix \
 	-v /var/run/docker.sock:/var/run/docker.sock \
 	pretix;
