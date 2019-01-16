@@ -1,4 +1,4 @@
-/data
+rootfs
 *.pyc
 *.pyo
 *.db
@@ -11,7 +11,7 @@ node_modules
 dumps
 backups
 venv
-logs
+# logs
 ssl
 virtualenv
 tmp
