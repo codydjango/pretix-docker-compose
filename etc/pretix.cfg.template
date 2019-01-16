@@ -1,14 +1,14 @@
 [pretix]
-instance_name=LocalPretix
-url=http://localhost:8000
-currency=EUR
+instance_name=
+url=
+currency=
 datadir=/data
 
 [mail]
-from=mail@pretix.local
-host=smtp.mailtrap.io
-user=6e5bf07698b149
-password=8de94a3fb6da86
+from=
+host=
+user=
+password=
 port=2525
 tls=True
 

@@ -1,4 +1,5 @@
 rootfs
+pretix.cfg
 *.pyc
 *.pyo
 *.db
