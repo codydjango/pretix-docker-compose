@@ -2,6 +2,7 @@
 
 ### Start it up
 `cp ./etc/pretix.cfg.template ./etc/pretix.cfg` # Fill in the blanks
+
 `docker-compose run --build` 
 
 ### Helper commands
