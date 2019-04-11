@@ -1,0 +1,24 @@
+{% load i18n %}
+
+<div class="form-horizontal etherpay-container">
+    <div class="etherpay-errors">
+
+    </div>
+    <noscript>
+        <div class="alert alert-warning">
+            {% trans "For ethereum payment, please turn on JavaScript." %}
+        </div>
+    </noscript>
+
+    <p class="help-block">
+        {% blocktrans trimmed %}
+            Your payment will happen through the Ethereum mainnet. You will need to use the MetaMask extension to interface with the
+            Smart Contract that is handling the order processing.
+        {% endblocktrans %}
+
+        Ether: {{ total }}
+        Order: {{ order }}
+
+        <input type="text" name="ether_total" value="{{ total }}" id="ether_total"/>
+    </p>
+</div>

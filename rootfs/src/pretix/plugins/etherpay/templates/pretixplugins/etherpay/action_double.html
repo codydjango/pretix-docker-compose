@@ -1,0 +1,9 @@
+{% load i18n %}
+
+<p>
+    {% url "control:event.order" organizer=event.organizer.slug event=event.slug code=data.order as ourl %}
+    {% blocktrans trimmed with charge=data.charge etherscan_href="href='https://etherscan.io/tx/"|add:data.charge|add:"' target='_blank'"|safe order="<a href='"|add:ourl|add:"'>"|add:data.order|add:"</a>"|safe %}
+        The Ether transaction <a {{ etherscan_href }}>{{ charge }}</a> has succeeded, but the order {{ order }} has
+        already been paid by other means. Please speak with event administrator to arrange a refund.
+    {% endblocktrans %}
+</p>
