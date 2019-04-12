@@ -2,28 +2,32 @@
 
 ### Start it up
 
-`cp ./etc/pretix.cfg.template ./etc/pretix.cfg` # Fill in the blanks
-
-`docker-compose up` to run development environment 
+* `cp ./etc/pretix.cfg.template ./etc/pretix.cfg` # Fill in the blanks
+* `docker-compose up` to run development environment 
 
 ### Helper commands
 
-`./bin/manage.sh` to access django management commands
-`./bin/logs.sh` to access django management commands
-`./bin/shell.sh` to access bash shell
-
+* `./bin/manage.sh` to access django management commands
+* `./bin/logs.sh` to access django management commands
+* `./bin/shell.sh` to access bash shell
 
 ### Pretix Notes:
 
 * https://docs.pretix.eu/en/latest/admin/installation/docker_smallscale.html#next-steps
 
 ### Pretix Dashboard
-`http://localhost:8000/control/`
 
+* Dashboard: `http://localhost:8000/control/`
+* User: `admin@localhost`
+* Password: `admin`
+
+1. Create an organizer
+2. Create an event
+3. Start presales
 
 ### Todo:
 
-##### docker-compose environment for pretix
+##### Pretix environment setup
 
 * Docker
 * SMTP
@@ -33,14 +37,16 @@
 * pretix application `docker pull pretix/standalone:stable`
 * `pretix.cfg` for pulling it all together
 
-##### Contract
+##### Contract development
 
-* create smart contract to accept payment with order id
+* create solidity smart contract to accept payment with order id
+* store orderId and with payment
 * enable contract creator to withdraw funds
 * deploy to ganache testnet
 
 ##### API
 
+* create standalone Flask application for POC, later migrate to Pretix(Django)
 * manually register contract address and ABI with API
 * provide contract ABI and address to client
 * provide unique order ID to client
@@ -50,7 +56,9 @@
 
 ##### Client
 
-* inject web3 and enable on payment screen
+* create standalone HTML5/JS/Web3/MetaMask payment page, later inject via Pretix template
+* give MetaMask prompt if not found
+* instantiate web3 and enable ethereum
 * show order, with price in dollars and in ether
 * show payment button
 * when payment is made, pull up MetaMask and confirm (updated) price in ether
