@@ -9,10 +9,15 @@ class EtherpayApp(AppConfig):
     name = 'pretix.plugins.etherpay'
     verbose_name = _("Etherpay")
 
+    def ready(self):
+        from . import signals  # NOQA
+
     class PretixPluginMeta:
         name = _("Etherpay")
         author = _("Cody Django")
-        version = version
+        version = "0.0.1"
+        visible = True
+        restricted = False
         description = _("This plugin allows you to receive ether payments via " +
                         "a deployed ethereum contract")
 

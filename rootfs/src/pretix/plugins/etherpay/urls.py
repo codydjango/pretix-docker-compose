@@ -3,7 +3,7 @@ from django.conf.urls import include, url
 from pretix.multidomain import event_url
 
 from .views import (
-    etherpay_test,
+    etherpay_test, redirect_view
     # ReturnView, oauth_return,
     # redirect_view, webhook,
 )
