@@ -1,4 +1,5 @@
-rootfs
+rootfs/**/*
+!rootfs/src/pretix/plugins/etherpay
 pretix.cfg
 *.pyc
 *.pyo
