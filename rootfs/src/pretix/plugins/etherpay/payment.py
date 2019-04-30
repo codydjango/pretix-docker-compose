@@ -13,7 +13,6 @@ from i18nfield.strings import LazyI18nString
 from pretix.base.models import OrderPayment
 from pretix.base.payment import BasePaymentProvider
 
-
 class Etherpay(BasePaymentProvider):
     identifier = 'etherpay'
     verbose_name = _('Etherpay')
@@ -26,7 +25,8 @@ class Etherpay(BasePaymentProvider):
                 widget=forms.RadioSelect,
                 choices=(
                     ('mainnet', _('Mainnet')),
-                    ('ropsten', _('Ropsten')),
+                    ('ropsten', _('Ropsten (Testing only)')),
+                    ('local', _('Local 7545 (Testing only)')),
                 ),
                 initial='mainnet',
                 required=True
@@ -38,7 +38,7 @@ class Etherpay(BasePaymentProvider):
             )),
             ('contract_abi', forms.CharField(
                 label=_('Contract ABI'),
-                widget=forms.TextArea,
+                widget=forms.Textarea,
                 required=True
             ))
         ])
