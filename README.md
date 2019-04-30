@@ -7,6 +7,9 @@
 
 ### Helper commands
 
+* `./bin/prodserver.sh` to start nginx/gunicorn via supervisor
+* `./bin/stopprodserver.sh` to stop nginx/gunicorn via supervisor
+* `./bin/runserver.sh` to start django runserver
 * `./bin/manage.sh` to access django management commands
 * `./bin/logs.sh` to access django management commands
 * `./bin/shell.sh` to access bash shell
@@ -14,6 +17,11 @@
 ### Pretix Notes:
 
 * https://docs.pretix.eu/en/latest/admin/installation/docker_smallscale.html#next-steps
+* https://docs.pretix.eu/en/latest/development/setup.html
+
+### Contract Notes:
+
+* https://medium.com/coinmonks/a-really-simple-smart-contract-on-how-to-insert-value-into-the-ethereum-blockchain-and-display-it-62c455610e98
 
 ### Pretix Dashboard
 
@@ -77,7 +85,7 @@
 
 * no refunds right now (manual, contact administrator)
 * only one contract owner for withdrawals
-* a single contract for every event -- later we can improve to handle multiple events, and multiple administrators.
+* a single contract for every event -- later we can improve to handle multiple events, and multiple organizers.
 
 ### Process
 
